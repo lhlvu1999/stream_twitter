@@ -10,11 +10,11 @@ class Transports:
     def insert_into_db(self):
         data = self.data
         db = SessionLocal()
+
         # insert subject table
         subject = query.SubjectRepository(db)
         subject_value = data.get_subject()
         check_subject = subject.get_subject(subject_value)
-        # print(check_subject)
         if not check_subject:
             subject.insert_subject(subject_value)
 

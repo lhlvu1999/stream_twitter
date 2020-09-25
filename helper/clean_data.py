@@ -47,7 +47,7 @@ def convert_date(date_str):
     day = int(date[2])
     hour, minus, second = map(int, date[3].split(':'))
     year = int(date[-1])
-    id_date = convert_time()
+    id_date = convert_time(second, minus, hour, day, month, year)
     return [str(id_date), str(month), str(day), str(year),
             str(hour), str(minus), str(second // 10), day_in_week]
 
